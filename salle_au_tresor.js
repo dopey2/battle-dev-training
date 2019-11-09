@@ -1,10 +1,13 @@
+/**
+* Daniel Gabor
+* https://demo.isograd.com/runtest/QuestionDisplayer 
+*/
+
 /*******
  * Read input from STDIN
  * Use: console.log()  to output your result.
  * Use: console.error() to output debug information into STDERR
  * ***/
-
-// url => https://demo.isograd.com/runtest/QuestionDisplayer
 
 
 var input = [];
@@ -41,9 +44,7 @@ function goToPosition(vectorA, vectorB){
         }
     }
     
-    
-    return output;
-    
+    return output;    
 }
 
 
@@ -54,15 +55,11 @@ function ContestResponse(){
     const coinsPosition = [];
     const multipliersPosition = [];
     
-
     for(let i = 0 ; i < n ; i++){
         
         const dataForCurrentRow = input[i + 1];
         const objectForRowAsArray = dataForCurrentRow.split("");
-        
-        
-        console.error(dataForCurrentRow)
-        
+            
         for(let j = 0 ; j < objectForRowAsArray.length; j++){
             if(objectForRowAsArray[j] === "o"){
                 coinsPosition.push({x: j, y: i});
@@ -73,7 +70,6 @@ function ContestResponse(){
         }
     }
     
- 
     let position = {x: 0, y: 0};
     let movement = "";
     
@@ -91,8 +87,5 @@ function ContestResponse(){
         position = multipliersPosition[i];
     }
     
-    
     console.log(movement);
-    
-	//implement your code here using input array
 }
