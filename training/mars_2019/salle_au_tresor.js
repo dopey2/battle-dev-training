@@ -14,7 +14,7 @@ var input = [];
 
 readline_object.on("line", (value) => { //Read input values
 	input.push(value);
-})
+});
 //Call ContestResponse when all inputs are read
 readline_object.on("close", ContestResponse); 
 

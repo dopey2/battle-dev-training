@@ -1,0 +1,26 @@
+{
+  "name": "battle-dev-training",
+  "version": "1.0.0",
+  "description": "[problème](https://demo.isograd.com/runtest/QuestionDisplayer)  \r [solution JS](https://github.com/dopey2/battle-dev-training/blob/master/salle_au_tresor.js)",
+  "main": "training/mars_2019/salle_au_tresor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dopey2/battle-dev-training.git"
+  },
+  "author": "dani.gabor1996@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dopey2/battle-dev-training/issues"
+  },
+  "homepage": "https://github.com/dopey2/battle-dev-training#readme",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "n-readlines": "^1.0.0"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
