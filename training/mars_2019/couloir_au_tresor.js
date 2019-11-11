@@ -8,22 +8,7 @@
  * In this example solution should return the sum of input[0] and input[1]
  */
 
-
 var input = [];
-
-function checkResult(str){
-    str = str.split("");
-    let result = 0;
-    str.forEach((obj) => {
-       if(obj === "o"){
-           result++;
-       }
-       else if(obj === "*"){
-           result *=2;
-       }
-    });
-}
-
 
 function getNextMove(corridor){
     const data = corridor.split("X");
@@ -46,9 +31,7 @@ function getNextMove(corridor){
         return {corridor: "", lot};
     }
 
-
     if(indexOfCoinInLeft === indexOfCoinInRight){
-
         while(right[indexOfCoinInRight + 1] === "o"){
             numberOfCoinInRight++;
             indexOfCoinInRight++;

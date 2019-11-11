@@ -9,15 +9,7 @@
  * Use: console.error() to output debug information into STDERR
  * ***/
 
-
 var input = [];
-
-readline_object.on("line", (value) => { //Read input values
-	input.push(value);
-});
-//Call ContestResponse when all inputs are read
-readline_object.on("close", ContestResponse); 
-
 
 function goToPosition(vectorA, vectorB){
     
@@ -37,7 +29,7 @@ function goToPosition(vectorA, vectorB){
     
     for(let i = 0; i < Math.abs(y) ; i++){
         if( y > 0){
-            output += "v";
+            output += "v"
         }
         else if(y < 0){
             output += "^";
@@ -47,19 +39,17 @@ function goToPosition(vectorA, vectorB){
     return output;    
 }
 
+function solution(_input){
+    const n = parseInt(_input[0]);
 
-function ContestResponse(){
-    
-    const n = parseInt(input[0]);
-    
     const coinsPosition = [];
     const multipliersPosition = [];
-    
+
     for(let i = 0 ; i < n ; i++){
-        
-        const dataForCurrentRow = input[i + 1];
+
+        const dataForCurrentRow = _input[i + 1];
         const objectForRowAsArray = dataForCurrentRow.split("");
-            
+
         for(let j = 0 ; j < objectForRowAsArray.length; j++){
             if(objectForRowAsArray[j] === "o"){
                 coinsPosition.push({x: j, y: i});
@@ -69,23 +59,30 @@ function ContestResponse(){
             }
         }
     }
-    
+
     let position = {x: 0, y: 0};
     let movement = "";
-    
+
     for(let i = 0 ; i < coinsPosition.length; i++){
         const movToNextCoin = goToPosition(position, coinsPosition[i]);
         movement += movToNextCoin;
         movement += "x";
         position = coinsPosition[i];
     }
-    
-     for(let i = 0 ; i < multipliersPosition.length; i++){
+
+    for(let i = 0 ; i < multipliersPosition.length; i++){
         const moveToNextMultiplier = goToPosition(position, multipliersPosition[i]);
         movement += moveToNextMultiplier;
         movement += "x";
         position = multipliersPosition[i];
     }
-    
+
+    return movement;
+}
+
+function ContestResponse(){
+    const movement = solution(input);
     console.log(movement);
 }
+
+module.exports = solution;
