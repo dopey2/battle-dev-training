@@ -24,7 +24,7 @@ for(let i = 1; i < DATA_SET_COUNT + 1 ; i++){
     });
 
     fs.readFileSync(outputPath, 'utf-8').split(/\r?\n/).forEach(function(line) {
-        testData.output = line;
+        testData.output += line  + "\n";
     });
 
     testCases.push(testData);
