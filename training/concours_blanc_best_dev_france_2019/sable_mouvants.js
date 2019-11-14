@@ -40,14 +40,14 @@ function solution(_input) {
                 const left = mapDepth[i][j -1];
                 const right = mapDepth[i][j + 1];
 
-                const isLowestThanCurrentDepth = (
+                const isLowestOrEqualThanCurrentDepth = (
                     top <= currentDepth ||
                     bottom <= currentDepth ||
                     right <= currentDepth ||
                     left <= currentDepth
                 );
 
-                if(isLowestThanCurrentDepth && col !== ".") {
+                if(isLowestOrEqualThanCurrentDepth && col !== ".") {
 
                     const lowest = [currentDepth, top, bottom, left, right]
                         .reduce((prev, current) => current < prev ? current : prev, Infinity);
