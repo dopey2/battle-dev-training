@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const DATA_SET_COUNT = 5;
-const PATH_TO_SOLUTION = "../../training/pseudo_xml.js";
+const PATH_TO_SOLUTION = "../../../training/concours_blanc_best_dev_france_2019/pseudo_xml.js";
 const TEST_NAME = "Template ";
 
 
