@@ -40,14 +40,14 @@ function solution(_input) {
                 const left = mapDepth[i][j -1];
                 const right = mapDepth[i][j + 1];
 
-                const isLowestOrEqualThanCurrentDepth = (
+                const isLessOrEqualThanCurrentDepth = (
                     top <= currentDepth ||
                     bottom <= currentDepth ||
                     right <= currentDepth ||
                     left <= currentDepth
                 );
 
-                if(isLowestOrEqualThanCurrentDepth && col !== ".") {
+                if(isLessOrEqualThanCurrentDepth && col !== ".") {
 
                     const lowest = [currentDepth, top, bottom, left, right]
                         .reduce((prev, current) => current < prev ? current : prev, Infinity);
@@ -79,7 +79,6 @@ module.exports = solution;
 
 /*
 L'objet de ce challenge est de déterminer la profondeur maximale des zones de sable mouvant d'un désert. Le désert est un rectangle composé de cases de terre ferme ou de sable mouvant. La profondeur d'une case de sable mouvant est le nombre minimal de déplacements horizontaux et/ou verticaux à effectuer pour accéder à une case de terre ferme.
-
 
 
 Dans l'exemple ci-dessus les cases de terre ferme sont représentées par des . et les chiffres représentent la profondeur des cases de sable mouvant. La case en rouge a une profondeur de 2 car il faut faire au moins deux déplacements horizontaux et/ou verticaux (par exemple, un vers le haut et un vers la gauche, ou bien 2 vers la gauche) pour atteindre la terre ferme.
